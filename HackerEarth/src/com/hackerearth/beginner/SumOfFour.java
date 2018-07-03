@@ -2,7 +2,7 @@
 
         @Author : Tejas07PSK (Palash Sarkar),
         @CreatedON : 2 JUL, 2018, 1:47:53 PM
-        @File-Name : PrintName.java
+        @File-Name : SumOfFour.java
 
  */
 
