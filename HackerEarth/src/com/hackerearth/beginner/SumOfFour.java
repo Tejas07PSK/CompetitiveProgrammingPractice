@@ -1,3 +1,11 @@
+/*
+
+        @Author : Tejas07PSK (Palash Sarkar),
+        @CreatedON : 2 JUL, 2018, 1:47:53 PM
+        @File-Name : PrintName.java
+
+ */
+
 package com.hackerearth.beginner;
 
 import java.util.Scanner;
@@ -5,7 +13,7 @@ import java.util.Scanner;
 public class SumOfFour
 {
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
 
         int [] numArray = new int[4];
