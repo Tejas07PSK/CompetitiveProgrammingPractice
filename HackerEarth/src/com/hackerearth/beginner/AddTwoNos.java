@@ -10,7 +10,7 @@ package com.hackerearth.beginner;
 
 import java.util.Scanner;
 
-class AddTwoNos
+public class AddTwoNos
 {
 
     public static void main(String[] args)

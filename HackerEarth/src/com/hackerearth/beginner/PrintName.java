@@ -11,7 +11,7 @@ package com.hackerearth.beginner;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-class PrintName
+public class PrintName
 {
 
     public static void main(String args[]) throws Exception
