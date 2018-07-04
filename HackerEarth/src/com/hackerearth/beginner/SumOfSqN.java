@@ -1,3 +1,11 @@
+/*
+
+        @Author : Tejas07PSK (Palash Sarkar),
+        @CreatedON : 4 JUL, 2018, 1:47:53 AM
+        @File-Name : SumOfSqN.java
+
+ */
+
 package com.hackerearth.beginner;
 
 import java.util.Scanner;
