@@ -19,7 +19,7 @@ public class SumOfFour
         int [] numArray = new int[4];
         Scanner s = new Scanner(System.in);
         int sum = 0;
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
 
             numArray[i] = s.nextInt();
