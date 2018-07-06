@@ -20,12 +20,12 @@ public class FindProduct
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int factor = (int)(Math.pow(10, 9) + 7);
-        int product = 1;
+        long product = 1;
         br.readLine();
         String num_arr [] = (br.readLine()).split(" ");
         for (short i = 0; i < num_arr.length; i += 1)
-            product *= Short.valueOf(num_arr[i]);
-        System.out.println((product % factor));
+            product = (product * Short.valueOf(num_arr[i])) % factor;
+        System.out.println(product);
         br.close();
 
     }
