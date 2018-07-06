@@ -26,6 +26,7 @@ public class Anagrams
             System.out.println(countChsToDel((br.readLine()).toUpperCase(), (br.readLine()).toUpperCase()));
 
         }
+        br.close();
 
     }
 

@@ -24,7 +24,7 @@ public class PalindromicString
                 System.out.println("YES");
             else
                 System.out.println("NO");
-
+            br.close();
     }
 
 }

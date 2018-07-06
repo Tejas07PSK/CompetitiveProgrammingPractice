@@ -20,6 +20,7 @@ public class FormatPrinting
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println((Integer.parseInt(br.readLine()) * 2));
         System.out.println(br.readLine());
+        br.close();
 
     }
 
