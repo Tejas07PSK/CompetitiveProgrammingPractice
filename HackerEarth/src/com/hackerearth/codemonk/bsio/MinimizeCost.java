@@ -32,7 +32,7 @@ public class MinimizeCost
             {
 
                 if (vals[i] <= 0)
-                    continue;
+                    ;
                 else
                 {
 
