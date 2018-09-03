@@ -14,66 +14,49 @@ public class Spiral1
         public int[] spiralOrder(final int[][] A)
         {
 
-            int sr = 0, er = A.length - 1, sc = 0, ec = A[0].length - 1;
+            int lr = 0, ur = A.length - 1, lc = 0, uc = A[0].length - 1;
             int arr [] = new int [A.length * A[0].length];
-            int count = 0;
-            int arrow = 0;
-            while ((sr <= er) && (sc <= ec))
+            int count = 0, t = 0, x = 0, y = 0;
+            int offset [] = {0, 1};
+            while (count < (A.length * A[0].length))
             {
 
-                if (arrow == 0)
+                if (((y + offset[1]) > uc) || ((x + offset[0]) > ur) || ((y + offset[1]) < lc) || ((x + offset[0]) < lr))
                 {
 
-                    for (int i = sc; i<=ec; i += 1)
+                    if (((y + offset[1]) > uc))
                     {
 
-                        arr [count] = A[sr][i];
-                        count += 1;
+                        lr += 1;
 
                     }
-                    sr += 1;
-
-                }
-                else if (arrow == 1)
-                {
-
-                    for (int i = sr; i<=er; i += 1)
+                    if (((x + offset[0]) > ur))
                     {
 
-                        arr [count] = A[i][ec];
-                        count += 1;
+                        uc -= 1;
 
                     }
-                    ec -= 1;
-
-                }
-                else if (arrow == 2)
-                {
-
-                    for (int i = ec; i>=sc; i -= 1)
+                    if (((y + offset[1]) < lc))
                     {
 
-                        arr [count] = A[er][i];
-                        count += 1;
+                        ur -= 1;
 
                     }
-                    er -= 1;
-
-                }
-                else if (arrow == 3)
-                {
-
-                    for (int i = er; i>=sr; i -= 1)
+                    if (((x + offset[0]) < lr))
                     {
 
-                        arr [count] = A[i][sc];
-                        count += 1;
+                        lc += 1;
 
                     }
-                    sc += 1;
+                    t = offset[0];
+                    offset[0] = offset[1];
+                    offset[1] = -t;
 
                 }
-                arrow = (arrow + 1) % 4;
+                arr [count] = A[x][y];
+                x += offset[0];
+                y += offset[1];
+                count += 1;
 
             }
             return (arr);
