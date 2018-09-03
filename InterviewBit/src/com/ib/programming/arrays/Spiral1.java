@@ -15,8 +15,8 @@ public class Spiral1
         {
 
             int lr = 0, ur = A.length - 1, lc = 0, uc = A[0].length - 1;
-            int arr [] = new int [A.length * A[0].length];
-            int count = 0, t = 0, x = 0, y = 0;
+            int arr [] = new int [(A.length * A[0].length)];
+            int count = 0, temp = 0, x = 0, y = 0;
             int offset [] = {0, 1};
             while (count < (A.length * A[0].length))
             {
@@ -48,9 +48,9 @@ public class Spiral1
                         lc += 1;
 
                     }
-                    t = offset[0];
+                    temp = offset[0];
                     offset[0] = offset[1];
-                    offset[1] = -t;
+                    offset[1] = -temp;
 
                 }
                 arr [count] = A[x][y];
