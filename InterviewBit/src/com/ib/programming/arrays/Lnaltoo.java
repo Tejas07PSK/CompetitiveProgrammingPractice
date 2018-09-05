@@ -14,26 +14,27 @@ public class Lnaltoo
     public int dominantIndex(int[] nums)
     {
 
-        int large_idx = 0, i = 0;
+        int large = Integer.MIN_VALUE, seclarge = Integer.MIN_VALUE, i = 0, index = 0;
         for (i = 0; i < nums.length; i++)
         {
 
-            if (nums[i] > nums[large_idx])
+            if (nums[i] > large)
             {
 
-                large_idx = i;
+                seclarge = large;
+                large = nums[i];
+                index = i;
+
+            }
+            else if (nums[i] > seclarge)
+            {
+
+                seclarge = nums[i];
 
             }
 
         }
-        for (i = 0; i < nums.length; i++)
-        {
-
-            if ((i != large_idx) && (nums[large_idx] < (2 * nums[i])))
-                return (-1);
-
-        }
-        return (large_idx);
+        return ((large < (2 * seclarge)) ? -1 : index);
 
     }
 
