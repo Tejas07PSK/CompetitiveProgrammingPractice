@@ -14,7 +14,7 @@ public class DiagonalTraverse
     public int[] findDiagonalOrder(int[][] matrix)
     {
 
-        if ((matrix.length == 0) || ((matrix.length == 1) && (matrix[0].length == 0)))
+        if ((matrix == null) || ((matrix.length == 0) && (matrix[0].length == 0)))
         {
 
             return (new int [0]);
