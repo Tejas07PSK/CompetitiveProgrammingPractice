@@ -23,56 +23,108 @@ public class DiagonalTraverse
             return (new int [0]);
 
         }
-        int row = 1, col = 0, i = 0, j = 0, dir = 0, count = 0;
-        int res_arr [] = new int [(matrix.length * matrix[0].length)];
-        for (col = 0; col < matrix[0].length; col += 1)
+        else if (matrix.length == 1)
         {
 
-            i = col;
-            j = 0;
-            count = inner_while(i, j, dir, count, matrix, res_arr);
-            dir = (dir == 0 ? 1 : 0);
+            return (matrix[0]);
 
         }
-        for (row = 1; row < matrix.length; row += 1)
+        else if (matrix[0].length == 1)
         {
 
-            i = matrix[0].length - 1;
-            j = row;
-            count = inner_while(i, j, dir, count, matrix, res_arr);
-            dir = (dir == 0 ? 1 : 0);
+            int[] res_arr = new int[matrix.length];
+            for (int i = 0; i < matrix.length; i += 1)
+            {
+
+                res_arr[i] = matrix[i][0];
+
+            }
+            return (res_arr);
+
+        }
+        int i = 0, j = 0, dir = 1, count = 0;
+        int res_arr [] = new int [(matrix.length * matrix[0].length)];
+        while ((i < matrix.length) && (j < matrix[0].length))
+        {
+
+            res_arr[count] = matrix[i][j];
+            count += 1;
+            if (dir == 1)
+            {
+
+                j += 1;
+                if (i == 0)
+                {
+
+                    dir = 2;
+
+                }
+                else
+                {
+
+                    dir = 4;
+                }
+
+            }
+            else if (dir == 2)
+            {
+
+                j -= 1;
+                i += 1;
+                if (j == 0)
+                {
+
+                    dir = 3;
+
+                }
+                if (i == (matrix.length - 1))
+                {
+
+                    dir = 1;
+
+                }
+
+            }
+            else if (dir == 3)
+            {
+
+                i += 1;
+                if (j == 0)
+                {
+
+                    dir = 4;
+
+                }
+                else
+                {
+
+                    dir = 2;
+
+                }
+
+            }
+            else // dir = 4
+            {
+
+                i -= 1;
+                j += 1;
+                if (i == 0)
+                {
+
+                    dir = 1;
+
+                }
+                if (j == (matrix[0].length - 1))
+                {
+
+                    dir = 3;
+
+                }
+
+            }
 
         }
         return (res_arr);
-
-    }
-
-    private int inner_while(int i, int j, int dir, int count, int [][] matrix, int [] res_arr)
-    {
-
-        Stack <Integer> stk = new Stack <Integer> ();
-        while ((i >= 0) && (j < matrix.length))
-        {
-
-            stk.push(matrix[j][i]);
-            i -= 1;
-            j += 1;
-
-        }
-        if (dir == 1)
-        {
-
-            Collections.reverse(stk);
-
-        }
-        while (!(stk.empty()))
-        {
-
-            res_arr[count] = stk.pop();
-            count += 1;
-
-        }
-        return (count);
 
     }
 
