@@ -15,6 +15,7 @@ public class MinStepsInInfiniteGrid
 
     public int coverPoints(final int [] X, final int [] Y)
     {
+
         if ((X.length == 0) || (Y.length == 0) || (X == null) || (Y == null))
         {
 
