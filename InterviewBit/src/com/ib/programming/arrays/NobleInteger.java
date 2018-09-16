@@ -16,6 +16,12 @@ public class NobleInteger
     public int solve(final int A [])
     {
 
+        if ((A == null) || (A.length == 0))
+        {
+
+            return (-1);
+
+        }
         int i = 0;
         Arrays.sort(A);
         for (i = 0; i < A.length; i += 1)
