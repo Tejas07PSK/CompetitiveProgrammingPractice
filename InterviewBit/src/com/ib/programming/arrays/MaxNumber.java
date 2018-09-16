@@ -22,7 +22,8 @@ public class MaxNumber
 
             return ("");
 
-        } else if (A.length == 1)
+        }
+        else if (A.length == 1)
         {
 
             return (Integer.toString(A[0]));
