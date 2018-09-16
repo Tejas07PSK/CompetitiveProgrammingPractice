@@ -8,13 +8,13 @@
 
 package com.ib.programming.arrays;
 
-import java.util.Random;
-import java.util.Stack;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class MaxNumber
 {
 
-    private String largestNumber(final int A [])
+    public String largestNumber(final int A [])
     {
 
         if ((A == null) || (A.length == 0))
@@ -22,107 +22,26 @@ public class MaxNumber
 
             return ("");
 
-        }
-        else if (A.length == 1)
+        } else if (A.length == 1)
         {
 
             return (Integer.toString(A[0]));
 
         }
-        String arr [] = MaxNumber.cnvToAtringArray(A);
+        String arr[] = getStringArray(A);
         StringBuilder sb = new StringBuilder();
-        Stack <Integer> stk = new Stack <Integer> ();
-        Random r = new Random();
-        int start_index = 0;
-        int end_index = 0;
-        int iterator = 0;
-        String pivot = "";
-        int low = 0;
-        int high = 0;
-        int random_index = 0;
-        String temp = "";
-        stk.push(0);
-        stk.push(arr.length - 1);
-        while (!(stk.isEmpty()))
-        {
+        Arrays.sort(arr, new Comparator <String> ()
+                        {
 
-            high = stk.pop();
-            low = stk.pop();
-            if(high <= low)
-            {
+                            @Override
+                            public int compare(String o1, String o2)
+                            {
 
-                continue;
+                                return (((o1 + o2). compareTo(o2 + o1)) > 0 ? -1 : 1);
 
-            }
-            random_index = low + ((r.nextInt(arr.length)) % (high - low + 1));
-            if (!((arr[random_index]).equals(arr[low])))
-            {
+                            }
 
-                temp = arr[low];
-                arr[low] = arr[random_index];
-                arr[random_index] = temp;
-
-            }
-            start_index = low;
-            end_index = high;
-            iterator = low;
-            pivot = arr[low];
-            while (iterator <= end_index)
-            {
-
-                if (compareTo((arr[iterator] + pivot), (pivot + arr[iterator])) > 0)
-                {
-
-                    if (!((arr[iterator]).equals(arr[start_index])))
-                    {
-
-                        temp = arr[start_index];
-                        arr[start_index] = arr[iterator];
-                        arr[iterator] = temp;
-
-                    }
-                    iterator += 1;
-                    start_index += 1;
-
-                }
-                else if(compareTo((arr[iterator] + pivot), (pivot + arr[iterator])) < 0)
-                {
-
-                    if (!((arr[iterator]).equals(arr[end_index])))
-                    {
-
-                        temp = arr[end_index];
-                        arr[end_index] = arr[iterator];
-                        arr[iterator] = temp;
-
-                    }
-                    end_index -= 1;
-
-                }
-                else
-                {
-
-                    iterator += 1;
-
-                }
-
-            }
-            if ((start_index - 1) > low)
-            {
-
-                stk.push(low);
-                stk.push(start_index - 1);
-
-            }
-            if ((end_index + 1) < high)
-            {
-
-                stk.push(end_index + 1);
-                stk.push(high);
-
-            }
-
-        }
+                        });
         if ((arr[0]).equals("0"))
         {
 
@@ -139,62 +58,17 @@ public class MaxNumber
 
     }
 
-    private static int compareTo(final String s1, final String s2)
+    private static String [] getStringArray(final int arr [])
     {
 
-        for (int i = 0; (i < s1.length()) && (i < s2.length()); i += 1)
-        {
-
-            if (s1.charAt(i) == s2.charAt(i))
-            {
-
-                continue;
-
-            }
-            return ((int)s1.charAt(i) - (int)s2.charAt(i));
-
-        }
-        if (s1.length() < s2.length())
-        {
-
-            return (s2.charAt(s1.length()));
-
-        }
-        else if (s1.length() > s2.length())
-        {
-
-            return (s1.charAt(s2.length()));
-
-        }
-        else
-        {
-
-            return (0);
-
-        }
-
-    }
-
-    private static String [] cnvToAtringArray(final int arr [])
-    {
-
-        String strs [] = new String [arr.length];
+        String txt [] = new String [arr.length];
         for (int i = 0; i < arr.length; i += 1)
         {
 
-            strs[i] = Integer.toString(arr[i]);
+            txt[i] = Integer.toString(arr[i]);
 
         }
-        return (strs);
-
-    }
-
-    public static void main (String args [])
-    {
-
-        int inp_arr [] = {5, 100, 5};
-        MaxNumber obj = new MaxNumber();
-        System.out.println(obj.largestNumber(inp_arr));
+        return (txt);
 
     }
 
