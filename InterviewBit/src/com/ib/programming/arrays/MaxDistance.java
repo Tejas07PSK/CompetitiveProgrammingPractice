@@ -9,7 +9,6 @@
 package com.ib.programming.arrays;
 
 import java.util.List;
-import java.util.Arrays;
 import java.lang.Math;
 
 public class MaxDistance
