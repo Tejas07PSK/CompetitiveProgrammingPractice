@@ -19,6 +19,12 @@ public class Maxsprod
     public long maxSpecialProduct(final int A [])
     {
 
+        if ((A == null) || (A.length <= 1))
+        {
+
+            return (0);
+
+        }
         int left_right [] [] = new int [2] [];
         left_right [0] = getSpecialArray(A, A.length - 1, 0);
         left_right [1] = getSpecialArray(A, 0, A.length - 1);
