@@ -16,10 +16,10 @@ import java.util.List;
 public class MergeOverlappingIntervals
 {
 
-    public List <Interval> merge(final List<Interval> intervals)
+    public ArrayList <Interval> merge(final List<Interval> intervals)
     {
 
-        List <Interval> lst = new ArrayList <Interval> ();
+        ArrayList <Interval> lst = new ArrayList <Interval> ();
         Collections.sort(intervals, new Comparator <Interval> ()
                                     {
                                         @Override
