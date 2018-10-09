@@ -37,10 +37,10 @@ class Interval
 public class MergeIntervals
 {
 
-    public ArrayList <Interval> insert(List <Interval> intervals, Interval newInterval)
+    public ArrayList <Interval> insert(final List <Interval> intervals, final Interval newInterval)
     {
 
-        ArrayList <Interval> lst = new ArrayList <Interval> ();
+        final ArrayList <Interval> lst = new ArrayList <Interval> ();
         int c = 0;
         // put all intervals ending before newInterval
         while ((c < intervals.size()) && ((intervals.get(c)).end < newInterval.start))
