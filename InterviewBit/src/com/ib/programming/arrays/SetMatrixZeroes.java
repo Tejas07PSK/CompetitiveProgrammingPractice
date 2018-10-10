@@ -21,6 +21,10 @@ public class SetMatrixZeroes
         for (i = 0; i < a.size(); i += 1)
         {
 
+            // Since first cell for both first row and first column is the same i.e., matrix[0][0].
+            // We can use a extra variable for either the first row or first column.
+            // In this case we will use an additional variable for the first column i.e., col_to_set.
+            // and using matrix[0][0] for the first row.
             if ((a.get(i)).get(0) == 0)
             {
 
@@ -30,6 +34,7 @@ public class SetMatrixZeroes
             for (j = 1; j < (a.get(0)).size(); j += 1)
             {
 
+                // If any element is 0, we set the first elements of it's corresponding row and column to 0.
                 if ((a.get(i)).get(j) == 0)
                 {
 
@@ -41,6 +46,7 @@ public class SetMatrixZeroes
             }
 
         }
+        // Iterate over the array once again and using the first row and first column, update the elements.
         for (i = 1; i < a.size(); i += 1)
         {
 
@@ -57,6 +63,7 @@ public class SetMatrixZeroes
             }
 
         }
+        // Check if all elements in the first row needs to be set to zero.
         if ((a.get(0)).get(0) == 0)
         {
 
@@ -68,6 +75,7 @@ public class SetMatrixZeroes
             }
 
         }
+        // Check if all elements in the first column needs to be set to zero.
         if (col_to_set)
         {
 
