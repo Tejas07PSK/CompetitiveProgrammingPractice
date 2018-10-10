@@ -17,29 +17,29 @@ public class SetMatrixZeroes
     {
 
         boolean col_to_set = false;
-        int i = 0, j = 0;
-        for (i = 0; i < a.size(); i += 1)
+        int r = 0, c = 0;
+        for (r = 0; r < a.size(); r += 1)
         {
 
             // Since first cell for both first row and first column is the same i.e., matrix[0][0].
             // We can use a extra variable for either the first row or first column.
             // In this case we will use an additional variable for the first column i.e., col_to_set.
             // and using matrix[0][0] for the first row.
-            if ((a.get(i)).get(0) == 0)
+            if ((a.get(r)).get(0) == 0)
             {
 
                 col_to_set = true;
 
             }
-            for (j = 1; j < (a.get(0)).size(); j += 1)
+            for (c = 1; c < (a.get(0)).size(); c += 1)
             {
 
                 // If any element is 0, we set the first elements of it's corresponding row and column to 0.
-                if ((a.get(i)).get(j) == 0)
+                if ((a.get(r)).get(c) == 0)
                 {
 
-                    (a.get(i)).set(0, 0);
-                    (a.get(0)).set(j, 0);
+                    (a.get(r)).set(0, 0);
+                    (a.get(0)).set(c, 0);
 
                 }
 
@@ -47,16 +47,16 @@ public class SetMatrixZeroes
 
         }
         // Iterate over the array once again and using the first row and first column, update the elements.
-        for (i = 1; i < a.size(); i += 1)
+        for (r = 1; r < a.size(); r += 1)
         {
 
-            for (j = 1; j < (a.get(0)).size(); j += 1)
+            for (c = 1; c < (a.get(0)).size(); c += 1)
             {
 
-                if (((a.get(i)).get(0) == 0) || ((a.get(0)).get(j) == 0))
+                if (((a.get(r)).get(0) == 0) || ((a.get(0)).get(c) == 0))
                 {
 
-                    (a.get(i)).set(j, 0);
+                    (a.get(r)).set(c, 0);
 
                 }
 
@@ -67,10 +67,10 @@ public class SetMatrixZeroes
         if ((a.get(0)).get(0) == 0)
         {
 
-            for (j = 1; j < (a.get(0)).size(); j += 1)
+            for (c = 1; c < (a.get(0)).size(); c += 1)
             {
 
-                (a.get(0)).set(j, 0);
+                (a.get(0)).set(c, 0);
 
             }
 
@@ -79,10 +79,10 @@ public class SetMatrixZeroes
         if (col_to_set)
         {
 
-            for (i = 0; i < a.size(); i += 1)
+            for (r = 0; r < a.size(); r += 1)
             {
 
-                (a.get(i)).set(0, 0);
+                (a.get(r)).set(0, 0);
 
             }
 
