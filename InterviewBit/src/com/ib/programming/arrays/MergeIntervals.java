@@ -60,7 +60,7 @@ public class MergeIntervals
         }
         lst.add(newInterval); // add the resultant combined interval
         // add all the remaining intervals
-        while(c < intervals.size())
+        while (c < intervals.size())
         {
 
             lst.add((intervals.get(c++)));
