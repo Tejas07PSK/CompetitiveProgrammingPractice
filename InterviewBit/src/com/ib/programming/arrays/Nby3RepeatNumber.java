@@ -13,22 +13,23 @@ import java.util.List;
 public class Nby3RepeatNumber
 {
 
-    public int getRepeatingNumber(final List <Integer> lst)
+    // DO NOT MODIFY THE LIST.
+    public int repeatedNumber(final List <Integer> a)
     {
 
         int one = Integer.MAX_VALUE, count1 = 0, two = Integer.MAX_VALUE, count2 = 0;
-        int length = lst.size(), i = 0;
+        int length = a.size(), i = 0;
         // modified Boyer-Moore voting algorithm, for finding majority cadidates.
         while (i < length)
         {
 
-            if (lst.get(i) == one)
+            if (a.get(i) == one)
             {
 
                 count1 += 1;
 
             }
-            else if (lst.get(i) == two)
+            else if (a.get(i) == two)
             {
 
                 count2 += 1;
@@ -37,14 +38,14 @@ public class Nby3RepeatNumber
             else if (count1 == 0)
             {
 
-                one = lst.get(i);
+                one = a.get(i);
                 count1 += 1;
 
             }
             else if (count2 == 0)
             {
 
-                two = lst.get(i);
+                two = a.get(i);
                 count2 += 1;
 
             }
@@ -64,13 +65,13 @@ public class Nby3RepeatNumber
         for (i = 0; i < length; i += 1)
         {
 
-            if (lst.get(i) == one)
+            if (a.get(i) == one)
             {
 
                 count1 += 1;
 
             }
-            else if (lst.get(i) == two)
+            else if (a.get(i) == two)
             {
 
                 count2 += 1;
