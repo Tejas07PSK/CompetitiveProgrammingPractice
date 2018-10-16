@@ -13,7 +13,7 @@ import java.util.Stack;
 public class AddOneToNumber
 {
 
-    public int [] plusOne(final int[] A)
+    public int [] plusOne(final int [] A)
     {
 
         if ((A == null) || (A.length == 0))
