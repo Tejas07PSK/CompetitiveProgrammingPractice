@@ -16,13 +16,13 @@ public class PascalsTriangle
     public ArrayList <ArrayList <Integer>> solve(final int A)
     {
 
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> temp = null;
+        ArrayList <ArrayList <Integer>> res = new ArrayList <ArrayList <Integer>> ();
+        ArrayList <Integer> temp = null;
         int c = 0;
         for (int i = 1; i <= A; i += 1)
         {
 
-            temp = new ArrayList<Integer>();
+            temp = new ArrayList <Integer> ();
             c = 1;
             temp.add(c);
             for (int j = 1; j < i; j += 1)
