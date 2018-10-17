@@ -13,16 +13,17 @@ import java.util.ArrayList;
 public class KthRowOfPascalsTriangle
 {
 
-    public ArrayList <Integer> solve(final int A)
+    // k is 0 based. k = 0, corresponds to the row [1]. 
+    public ArrayList <Integer> getRow(final int k)
     {
 
         ArrayList <Integer> res = new ArrayList <Integer> ();
         int c = 1;
         res.add(c);
-        for (int i = 1; i < A; i += 1)
+        for (int i = 1; i < (k + 1); i += 1)
         {
 
-            c *= (A - i);
+            c *= ((k + 1) - i);
             c /= i;
             res.add(c);
 
