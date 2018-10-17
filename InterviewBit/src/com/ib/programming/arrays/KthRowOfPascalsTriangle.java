@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class KthRowOfPascalsTriangle
 {
 
-    // k is 0 based. k = 0, corresponds to the row [1]. 
+    // k is 0 based. k = 0, corresponds to the row [1].
     public ArrayList <Integer> getRow(final int k)
     {
 
