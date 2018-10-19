@@ -8,14 +8,25 @@
 
 package com.ib.programming.math;
 
+import java.util.List;
+
 public class SumOfPairWiseHammingDistance
 {
 
     private final int factor = 1000000007;
-    public int hammingDistance(final int [] A)
+
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int hammingDistance(final List <Integer> A)
     {
 
-        if ((A == null) || (A.length < 2))
+        if (A == null)
+        {
+
+            return (0);
+
+        }
+        long n = A.size();
+        if (n < 2)
         {
 
             return (0);
@@ -26,10 +37,10 @@ public class SumOfPairWiseHammingDistance
         {
 
             c = 0;
-            for (int j = 0; j < A.length; j += 1)
+            for (int j = 0; j < n; j += 1)
             {
 
-                if ((A[j] & (1 << i)) == 0)
+                if ((A.get(j) & (1 << i)) == 0)
                 {
 
                     c += 1;
@@ -37,7 +48,7 @@ public class SumOfPairWiseHammingDistance
                 }
 
             }
-            dist += (c * (A.length - c) * 2);
+            dist += (c * (n - c) * 2);
 
         }
         return ((int)(dist % factor));
