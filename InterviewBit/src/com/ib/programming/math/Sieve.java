@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Sieve
 {
 
-    public ArrayList<Integer> sieve(final int n)
+    public ArrayList <Integer> sieve(final int n)
     {
 
         boolean [] temp =  new boolean [n + 1];
