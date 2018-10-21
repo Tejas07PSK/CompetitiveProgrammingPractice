@@ -14,13 +14,13 @@ public class PowerOfTwoIntegers
 {
 
     private static final double factor = 1e-8;
-    public boolean isPower(final int A)
+    public int isPower(final int A)
     {
 
         if (A == 1)
         {
 
-            return (true);
+            return (1);
 
         }
         double exp = 0.0;
@@ -31,12 +31,12 @@ public class PowerOfTwoIntegers
             if ((exp - (int)exp) < factor)
             {
 
-                return (true);
+                return (1);
 
             }
 
         }
-        return (false);
+        return (0);
 
     }
 
